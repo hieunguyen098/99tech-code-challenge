@@ -1,0 +1,20 @@
+{
+  "name": "problem4",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Three ways to sum to n",
+  "scripts": {
+    "test": "tsx --test sum_to_n.test.ts",
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run format:check && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply min-w-[320px] bg-slate-950 font-sans text-slate-100 antialiased;
+  background-image:
+    radial-gradient(
+      60rem 40rem at 10% -10%,
+      rgb(139 92 246 / 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      50rem 40rem at 110% 110%,
+      rgb(34 211 238 / 0.18),
+      transparent 60%
+    );
+  background-attachment: fixed;
+}
+
+/*
+ * Reduced motion is handled per element (Tailwind `motion-safe:` variants) rather than by
+ * zeroing every animation: a blanket `animation-duration: 0.01ms` turns the infinite loading
+ * spinner into a random flicker. The spinner is essential feedback, so it keeps spinning.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .toast-enter {
+    animation: toast-in 250ms ease-out;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
